@@ -46,7 +46,7 @@ Other features: SEO metadata, Open Graph image, `sitemap.xml`, `robots.txt`, pro
 1. **Push this folder to a GitHub repository.**
 2. In Vercel, click **Add New → Project**, import the repo and keep the defaults (Framework: Next.js). Don't deploy yet, or deploy and come back.
 3. **Add the product database:** Project → **Storage** → **Create Database** → **Upstash for Redis** (free plan is fine) → connect it to this project. This adds `KV_REST_API_URL` and `KV_REST_API_TOKEN` automatically.
-4. **Add photo storage:** Project → **Storage** → **Create** → **Blob** → connect it to this project. This adds `BLOB_READ_WRITE_TOKEN` automatically.
+4. **Add photo storage:** Project → **Storage** → **Create** → **Blob** → connect it to this project (tick all environments). Depending on the store, Vercel adds `BLOB_STORE_ID` (signs in automatically) or `BLOB_READ_WRITE_TOKEN`; both work. Public and private stores are both supported — photos in a private store are served through `/media/…`.
 5. **Set the owner login:** Project → **Settings → Environment Variables** → add `ADMIN_USERNAME` (for example `admin`) and `ADMIN_PASSWORD` (long and private).
 6. Optional: add `NEXT_PUBLIC_SITE_URL` (for example `https://dudes.lk`) once you have a custom domain.
 7. **Redeploy** (Deployments → ⋯ → Redeploy) so the new variables take effect.
